@@ -37,9 +37,8 @@ def get_info_about_sign_zodiac_by_number(request, sign_zodiac:int):
 def get_info_about_sign_zodiac(request, sign_zodiac:str):
     '''Получение знака зодиака по строке'''
     try:
-        h = "/horoscope"
-        #h2 = reverse('horoscope-name') # ne rabotaet
-        horoscope_home = f'<br><br><b><a href=\'{h}\'>На главную</a></b>'
+        home_page = reverse('index-name')
+        horoscope_home = f'<br><br><b><a href=\'{home_page}\'>На главную</a></b>'
         return HttpResponse(' '.join(signs[sign_zodiac]) + horoscope_home)
     except KeyError:
         return HttpResponseNotFound(f'Неизвестный знак зодиака - {sign_zodiac}')
