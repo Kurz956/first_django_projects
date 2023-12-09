@@ -32,6 +32,10 @@ for sign, desc in signs.items():
 
 print(zodiac_signs)
 print(zodiac_signs['leo'].get_sign())
+
+year = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+m = 2
+print(year[m])
 # raw = f'{zodiac_signs["leo"]._description}'
 # print(raw)
 # for sign, index in zodiac_signs.items():
