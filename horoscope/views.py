@@ -46,6 +46,16 @@ class Sign:
 zodiac_signs = {}
 for sign, desc in signs.items():
     zodiac_signs[sign] = Sign(name=sign, type=desc[0], picture=desc[1], index=desc[2], description=desc[3], date=desc[4])
+
+def get_yyyy_converters(request, sign_zodiac):
+    return HttpResponse(f'Вы передали число из 4 числе - {sign_zodiac}')
+def get_my_float_converters(request, sign_zodiac):
+    return HttpResponse(f'Вы передали число вещественное число - {sign_zodiac}')
+def get_my_date_converters(request, sign_zodiac):
+    return HttpResponse(f'Вы передали дату - {sign_zodiac}')
+def split_converters(reques, text):
+    return HttpResponse(f'текст разбит - {text}')
+
 def home_page():
     '''Возврат на список элементов'''
     home_page = reverse('index-name')
